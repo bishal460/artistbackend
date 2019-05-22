@@ -24,7 +24,7 @@ class User extends Module {
 
 
 	}
-	public function store(){
+	public function storeAll(){
 		// $this->$userId =$_POST['userId'];
 		
 		$this->username =$_POST['username'];
@@ -39,7 +39,7 @@ class User extends Module {
 
 
 	}
-	public function login(){
+	public function loginAll(){
 		// $this->userId = $_POST['userId'];
         $this->useremail = $_POST['useremail'];
         $this->userpassword = $_POST['userpassword'];

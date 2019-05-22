@@ -23,7 +23,7 @@ class Event extends Module {
         $this->moduleName = 'Event';
     }
 
-    public function store(){
+    public function storeAll(){
         $this->eventName = $_POST['eventName'];
         $this->eventLocation = $_POST['eventLocation'];
         $this->eventDes = $_POST['eventDes'];
@@ -34,7 +34,7 @@ class Event extends Module {
     }
 
     // ---------------------------booking---------------------
-     public function book(){
+     public function bookAll(){
         $this->eventId = $_POST['eventId'];
         $this->eventName = $_POST['eventName'];
         $this->eventLocation = $_POST['eventLocation'];
@@ -44,7 +44,7 @@ class Event extends Module {
         $this->storeData();
     }
 
-    public function update(){
+    public function updateAll(){
         $this->eventId = $_POST['eventId'];
         $this->eventName = $_POST['eventName'];
         $this->eventLocation = $_POST['eventLocation'];
@@ -55,18 +55,18 @@ class Event extends Module {
         $this->updateData();
     }
 
-    public function delete(){
+    public function deleteAll(){
         $this->eventId = $_POST['eventId'];
         $this->query = "DELETE FROM event WHERE eventId=".$this->eventId;
         $this->deleteData();
     }
 
-    public function list(){
+    public function listall(){
         $this->query = "SELECT * FROM event";
         $this->listData();
     }
 
-    public function load(){
+    public function loadAll(){
         $this->eventId = $_REQUEST['eventId'];
         $this->query = "SELECT * FROM event WHERE eventId = ".$this->eventId;
         $this->loadData();

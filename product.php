@@ -15,14 +15,14 @@ class Product extends Module {
         $this->moduleName = 'Product';
     }
 
-    public function store(){
+    public function storeAll(){
         $this->productName = $_POST['productName'];
         $this->productLocation = $_POST['productLocation'];
         $this->query = "INSERT INTO product(productName, productLocation) VALUE ('".$this->productName."', '".$this->productLocation."') ";
         $this->storeData();
     }
 
-    public function update(){
+    public function updateAll(){
         $this->productId = $_POST['productId'];
         $this->productName = $_POST['productName'];
         $this->productLocation = $_POST['productLocation'];
@@ -30,18 +30,18 @@ class Product extends Module {
         $this->updateData();
     }
 
-    public function delete(){
+    public function deleteAll(){
         $this->productId = $_POST['productId'];
         $this->query = "DELETE FROM product WHERE productId=".$this->productId;
         $this->deleteData();
     }
 
-    public function list(){
+    public function listAll(){
         $this->query = "SELECT * FROM product";
         $this->listData();
     }
 
-    public function load(){
+    public function loadAll(){
         $this->productId = $_REQUEST['productId'];
         $this->query = "SELECT * FROM product WHERE productId = ".$this->productId;
         $this->loadData();
